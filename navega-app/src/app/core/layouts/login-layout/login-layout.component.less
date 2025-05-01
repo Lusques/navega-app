@@ -1,0 +1,38 @@
+@import "../../../../styles/abstracts/_variables.less";
+
+.auth {
+  min-height: 100vh;
+  display: flex;
+  &__aside {
+    background-color: @white;
+    flex-grow: 1;
+    max-width: 35%;
+  }
+  &__login {
+    &--figure {
+      margin: auto;
+      max-width: 124px;
+      padding: 64px;
+    }
+  }
+  &__banner {
+    background-image: url("/assets/images/auth__banner--bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-grow: 1;
+    max-width: 65%;
+    &--figure {
+      margin: 64px auto 0;
+      width: 100%;
+      padding: 0 24px;
+    }
+    &--p {
+      color: @white;
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
