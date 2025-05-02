@@ -6,6 +6,11 @@ import { DashboardLayoutComponent } from './core/layouts/dashboard-layout/dashbo
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     component: LoginLayoutComponent,
     children: [
       {
@@ -19,7 +24,8 @@ const routes: Routes = [
     path: '',
     component: DashboardLayoutComponent,
     canActivate: [
-      /*AuthGuard*/ // AuthGuard não existe [DEBUG]
+      /*AuthGuard*/
+      // AuthGuard não existe [DEBUG]
     ],
     children: [
       {
