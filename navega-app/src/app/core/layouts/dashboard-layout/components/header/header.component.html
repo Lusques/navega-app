@@ -5,16 +5,33 @@
         <img src="/assets/images/avatar.png" alt="avatar do usuário" />
       </figure>
       <div class="header__icons--container">
-        <i class="header__icons--icon pi pi-home"></i>
-        <i class="header__icons--icon pi pi-eye"></i>
-        <i class="header__icons--icon pi pi-sync"></i>
+        <figure class="header__icons--icon">
+          <img
+            src="../../../../../../assets/icons/home-lg.svg"
+            alt="ícone de home"
+          />
+        </figure>
+        <figure class="header__icons--icon">
+          <img
+            src="../../../../../../assets/icons/eye.svg"
+            alt="ícone de olho"
+          />
+        </figure>
+        <figure class="header__icons--icon">
+          <img
+            src="../../../../../../assets/icons/repeat-alt.svg"
+            alt="ícone de refresh"
+          />
+        </figure>
       </div>
     </div>
   </div>
   <div class="header__bottom">
     <div class="header__container header__container--border">
       <div class="header__nav--container" (click)="notifyClick()">
-        <i class="pi pi-arrow-left"></i>
+        <figure class="header__nav--figure">
+          <img src="/assets/icons/arrow-left.svg" alt="seta para esquerda" />
+        </figure>
         <span>Meu plano</span>
       </div>
     </div>

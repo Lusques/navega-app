@@ -1,4 +1,6 @@
 @import "../../../../../../styles/abstracts/_variables.less";
+@import "../../../../../../styles/abstracts/_mixins.less";
+
 .header {
   &__top {
     background-color: @secondary-60;
@@ -38,8 +40,10 @@
       height: fit-content;
     }
     &--icon {
+      cursor: pointer;
       font-size: 24px;
-      height: fit-content;
+      height: 32px;
+      width: 32px;
     }
   }
   &__nav {
@@ -51,6 +55,18 @@
       gap: 8px;
       text-transform: uppercase;
       width: fit-content;
+      & > span {
+        font-size: 14px;
+      }
+    }
+    &--figure {
+      width: 24px;
+      height: 24px;
     }
   }
+  .responsive(md, {
+    &__top{
+      display: none;
+    }
+  });
 }
