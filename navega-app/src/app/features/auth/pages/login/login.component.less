@@ -1,4 +1,5 @@
 @import "../../../../../styles/abstracts/_variables.less";
+@import "../../../../../styles/abstracts/_mixins.less";
 .auth {
   &__login {
     box-sizing: border-box;
@@ -43,4 +44,9 @@
       color: @primary-60;
     }
   }
+  .responsive(md, {
+    &__login{
+      margin: 32px auto;
+    }
+  });
 }

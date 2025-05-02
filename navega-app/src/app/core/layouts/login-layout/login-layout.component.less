@@ -1,4 +1,5 @@
 @import "../../../../styles/abstracts/_variables.less";
+@import "../../../../styles/abstracts/_mixins.less";
 
 .auth {
   min-height: 100vh;
@@ -6,7 +7,7 @@
   &__aside {
     background-color: @white;
     flex-grow: 1;
-    max-width: 35%;
+    min-width: 360px;
   }
   &__banner {
     background-image: url("/assets/images/auth__banner--bg.png");
@@ -14,7 +15,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     flex-grow: 1;
-    max-width: 65%;
+    max-width: calc(100% - 530px);
     &--figure {
       margin: 64px auto 0;
       width: 100%;
@@ -28,4 +29,16 @@
       text-align: center;
     }
   }
+  .responsive(xl, {
+    &__banner{
+      &--figure{
+        padding: 0
+      }
+    }
+  });
+  .responsive(lg, {
+    &__banner{
+      display: none
+    }
+  });
 }
