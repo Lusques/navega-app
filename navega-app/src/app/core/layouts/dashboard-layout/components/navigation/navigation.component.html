@@ -1,0 +1,27 @@
+<aside class="navigation">
+  <section class="navigation__header">
+    <figure class="navigation__header--figure">
+      <img src="/assets/icons/address-card.svg" alt="ícone de identificação" />
+    </figure>
+    <p class="navigation__header--title">Meu plano</p>
+    <p class="navigation__header--subtitle">O que você quer fazer?</p>
+  </section>
+  <section class="navigation__body">
+    <ul class="navigation__list">
+      <li
+        class="navigation__list--item"
+        *ngFor="let item of [].constructor(8); let i = index"
+      >
+        <div>
+          <figure class="navigation__list--icon">
+            <img src="/assets/icons/file-invoice-dollar.svg" alt="icon" />
+          </figure>
+          <span>Ver extrato</span>
+        </div>
+        <figure class="navigation__list--arrow">
+          <img src="/assets/icons/chevron-right.svg" alt="icon" />
+        </figure>
+      </li>
+    </ul>
+  </section>
+</aside>

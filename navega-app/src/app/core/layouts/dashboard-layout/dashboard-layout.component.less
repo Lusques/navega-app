@@ -1,0 +1,21 @@
+.main {
+  &__container {
+    box-sizing: content-box;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin: 16px auto;
+    max-width: 1140px;
+    padding: 0 24px;
+  }
+  &__column {
+    &--left {
+      flex-grow: 1;
+      max-width: 368px;
+    }
+    &--right {
+      background-color: blue;
+      flex-grow: 1;
+    }
+  }
+}

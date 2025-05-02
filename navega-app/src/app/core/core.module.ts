@@ -4,9 +4,10 @@ import { LoginLayoutComponent } from './layouts/login-layout/login-layout.compon
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { Router, RouterModule } from '@angular/router';
 import { HeaderComponent } from './layouts/dashboard-layout/components/header/header.component';
+import { NavigationComponent } from './layouts/dashboard-layout/components/navigation/navigation.component';
 
 @NgModule({
-  declarations: [LoginLayoutComponent, DashboardLayoutComponent, HeaderComponent],
+  declarations: [LoginLayoutComponent, DashboardLayoutComponent, HeaderComponent, NavigationComponent],
   imports: [CommonModule, RouterModule],
   exports: [RouterModule]
 })
