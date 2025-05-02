@@ -6,7 +6,7 @@ import { DashboardLayoutComponent } from './core/layouts/dashboard-layout/dashbo
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/auth/login',
     pathMatch: 'full',
   },
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
     component: LoginLayoutComponent,
     children: [
       {
-        path: 'login',
+        path: 'auth',
         loadChildren: () =>
           import('./features/auth/auth.module').then((m) => m.AuthModule),
       },
