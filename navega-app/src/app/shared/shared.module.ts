@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from './components/buttons/button/button.component';
+import { FormsModule } from '@angular/forms';
 import { InputAuthIdentifierComponent } from './components/form/input-auth-identifier/input-auth-identifier.component';
 import { InputPasswordComponent } from './components/form/input-password/input-password.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
-import { FormsModule } from '@angular/forms';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
-  declarations: [InputAuthIdentifierComponent, InputPasswordComponent],
-  imports: [CommonModule, FormsModule, InputTextModule, PasswordModule],
-  exports: [InputAuthIdentifierComponent, InputPasswordComponent],
+  declarations: [InputAuthIdentifierComponent, InputPasswordComponent, ButtonComponent],
+  imports: [CommonModule, FormsModule, InputTextModule, PasswordModule, ButtonModule],
+  exports: [InputAuthIdentifierComponent, InputPasswordComponent, ButtonComponent],
 })
 export class SharedModule {}
