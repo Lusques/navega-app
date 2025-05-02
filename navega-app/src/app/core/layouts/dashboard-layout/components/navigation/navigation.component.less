@@ -6,6 +6,10 @@
       margin: auto;
       width: 60px;
     }
+    &--title,
+    &--subtitle {
+      white-space: nowrap;
+    }
     &--title {
       color: @gray-90;
       font-weight: 600;
@@ -32,11 +36,22 @@
       margin-bottom: 16px;
       padding-bottom: 16px;
       text-transform: capitalize;
+      transition: 0.3;
+      transition: 0.3s;
+      &:hover,
+      &.active {
+        & > div,
+        & .navigation__list--arrow {
+          filter: invert(56%) sepia(86%) saturate(368%) hue-rotate(134deg)
+            brightness(82%) contrast(105%);
+        }
+      }
       & > div {
         align-items: center;
         display: flex;
         font-size: 14px;
         gap: 8px;
+        white-space: nowrap;
       }
     }
     &--icon {
