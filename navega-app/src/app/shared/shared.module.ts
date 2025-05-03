@@ -15,6 +15,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ChartDoughnutComponent } from './components/layout/chart-doughnut/chart-doughnut.component';
 import { Chart } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
+import { ChartBadgeComponent } from './components/layout/chart-badge/chart-badge.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ChartModule } from 'primeng/chart';
     CardSkeletonComponent,
     AccordionComponent,
     ChartDoughnutComponent,
+    ChartBadgeComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +46,7 @@ import { ChartModule } from 'primeng/chart';
     CardSkeletonComponent,
     AccordionComponent,
     ChartDoughnutComponent,
+    ChartBadgeComponent,
   ],
 })
 export class SharedModule {}

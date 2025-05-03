@@ -1,0 +1,24 @@
+@import "../../../../../styles/abstracts/_variables.less";
+.chart-badge {
+  &__flex {
+    align-items: center;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
+  &__circle {
+    background-color: #ededed;
+    border-radius: 100%;
+    height: 8px;
+    width: 8px;
+  }
+  &__title,
+  &__subtitle {
+    margin: 0;
+    text-align: center;
+    color: @gray-90;
+  }
+  &__subtitle {
+    font-weight: 600;
+  }
+}
