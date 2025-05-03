@@ -1,15 +1,32 @@
 <div class="accordion__container">
   <p-accordion [multiple]="true">
-    <p-accordionTab header="Header I">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <div class="accordion__header--container">
+          <div class="accordion__container--flex">
+            <figure class="accordion__icon">
+              <img src="/assets/icons/coins.svg" alt="icone de moedas" />
+            </figure>
+            <p class="accordion__header--title">Contribuição mensal</p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <div class="accordion__body">
+          <div class="accordion__body--line">
+            <p class="accordion__body--item">Valor da contribuição</p>
+            <p class="accordion__body--item">
+              <b> R$ 500,00 </b>
+            </p>
+          </div>
+          <div class="accordion__body--line">
+            <p class="accordion__body--item">Valor da contribuição</p>
+            <p class="accordion__body--item">
+              <b> R$ 500,00 </b>
+            </p>
+          </div>
+        </div>
+      </ng-template>
     </p-accordionTab>
   </p-accordion>
 </div>
