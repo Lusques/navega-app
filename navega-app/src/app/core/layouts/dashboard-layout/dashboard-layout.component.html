@@ -1,1 +1,14 @@
-<p>dashboard-layout works!</p>
+<app-header (headerClicked)="toggleNavigation()"></app-header>
+<main class="main">
+  <section
+    class="main__container"
+    [ngClass]="{ 'main__container--gap': showNavigation }"
+  >
+    <div class="main__column--left" [ngClass]="{ active: showNavigation }">
+      <app-navigation></app-navigation>
+    </div>
+    <div class="main__column--right">
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</main>

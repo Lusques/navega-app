@@ -1,0 +1,66 @@
+@import "../../../../../styles/abstracts/_variables.less";
+@import "../../../../../styles/abstracts/_mixins.less";
+.auth {
+  &__login {
+    box-sizing: border-box;
+    margin: 64px auto;
+    max-width: 360px;
+    padding: 24px 24px 0;
+    width: 100%;
+    &--h1 {
+      margin: 0 0 16px;
+    }
+    &--title {
+      color: @gray-90;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 125%;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    &--text {
+      color: @gray-90;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 150%;
+      padding: 0 12px;
+      text-align: center;
+    }
+  }
+  &__form {
+    margin-bottom: 16px;
+  }
+  &__fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px 0 114px;
+    padding: 0;
+  }
+  &__forgot-password {
+    &--container {
+    }
+    &--link {
+      color: @primary-60;
+      cursor: pointer;
+    }
+  }
+  .responsive(md, {
+    &__login{
+      margin: 32px auto;
+    }
+  });
+}
+::ng-deep {
+  & .auth {
+    &__login {
+      &--figure {
+        margin-bottom: 16px;
+        margin: auto;
+        max-width: 150px;
+        padding: 60px 12px;
+      }
+    }
+  }
+}

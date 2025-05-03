@@ -1,0 +1,47 @@
+@import "../../../../styles/abstracts/_mixins.less";
+.main {
+  &__container {
+    box-sizing: content-box;
+    display: flex;
+    gap: 0;
+    justify-content: space-between;
+    margin: 16px auto;
+    max-width: 1140px;
+    padding: 0 24px;
+    transition: 0.3s;
+    &--gap {
+      gap: 16px;
+    }
+  }
+  &__column {
+    &--left {
+      max-width: 336px;
+      overflow: hidden;
+      transition: 0.3s;
+      width: 0;
+      &.active {
+        width: 100%;
+      }
+    }
+    &--right {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+.responsive(md, {
+  .main{
+    &__column{
+      &--left{
+        background-color: white;
+        max-width: none;
+        position: absolute;
+        z-index: 1;
+        width: 0;
+        &.active{
+          width: calc(100% - 48px);
+        }
+      }
+    }
+  }
+});

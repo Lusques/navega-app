@@ -1,0 +1,64 @@
+@import "../../../../../../styles/abstracts/_variables.less";
+.navigation {
+  &__header {
+    &--figure {
+      margin-bottom: 8px;
+      margin: auto;
+      width: 60px;
+    }
+    &--title,
+    &--subtitle {
+      white-space: nowrap;
+    }
+    &--title {
+      color: @gray-90;
+      font-weight: 600;
+      margin: 0 0 2px;
+      text-align: center;
+    }
+    &--subtitle {
+      color: @gray-90;
+      margin: 0;
+      text-align: center;
+    }
+    margin-bottom: 32px;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    &--item {
+      align-items: center;
+      border-bottom: solid 1px @gray-50;
+      color: @gray-90;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      text-transform: capitalize;
+      transition: 0.3;
+      transition: 0.3s;
+      &:hover,
+      &.active {
+        & > div,
+        & .navigation__list--arrow {
+          filter: invert(56%) sepia(86%) saturate(368%) hue-rotate(134deg)
+            brightness(82%) contrast(105%);
+        }
+      }
+      & > div {
+        align-items: center;
+        display: flex;
+        font-size: 14px;
+        gap: 8px;
+        white-space: nowrap;
+      }
+    }
+    &--icon {
+      width: 32px;
+    }
+    &--arrow {
+      width: 24px;
+    }
+  }
+}

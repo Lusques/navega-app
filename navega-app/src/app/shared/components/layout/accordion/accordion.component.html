@@ -1,0 +1,37 @@
+<div class="accordion__container">
+  <p-accordion [multiple]="true">
+    <p-accordionTab>
+      <ng-template pTemplate="header">
+        <div class="accordion__header--container">
+          <div class="accordion__container--flex">
+            <figure class="accordion__icon">
+              <img src="/assets/icons/coins.svg" alt="icone de moedas" />
+            </figure>
+            <p class="accordion__header--title">Contribuição mensal</p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <div class="accordion__body">
+          <div class="accordion__body--line">
+            <p class="accordion__body--item">Valor da contribuição</p>
+            <p class="accordion__body--item">
+              <b> R$ 500,00 </b>
+            </p>
+          </div>
+          <div class="accordion__body--line">
+            <p class="accordion__body--item">Porcentagem do salário</p>
+            <p class="accordion__body--item">
+              <b> 5% </b>
+            </p>
+          </div>
+          <app-button
+            label="Alterar contribuição"
+            styleClass="accordion__button"
+            variant="ghost"
+          ></app-button>
+        </div>
+      </ng-template>
+    </p-accordionTab>
+  </p-accordion>
+</div>

@@ -1,0 +1,88 @@
+@import "../../../../../styles/abstracts/_variables.less";
+.accordion {
+  &__container {
+    border-radius: 10px;
+    border: solid 1px @gray-50;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__header {
+    &--container {
+      width: 100%;
+    }
+    &--title {
+      color: @gray-90;
+      font-size: 14px;
+      line-height: 125%;
+      margin: 0;
+    }
+  }
+  &__container {
+    &--flex {
+      align-items: center;
+      display: flex;
+      gap: 4px;
+    }
+  }
+  &__icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  &__body {
+    &--line {
+      display: flex;
+      justify-content: space-between;
+    }
+    &--item {
+      margin: 0 0 8px;
+    }
+  }
+}
+
+::ng-deep {
+  .p-accordion {
+    .p-accordion-header {
+      & .p-accordion-header-link {
+        background-color: transparent !important;
+        border: none;
+        box-shadow: none !important;
+      }
+      & .p-accordion-toggle-icon {
+        color: @primary-60;
+        margin: 0 !important;
+        position: absolute;
+        right: 16px;
+      }
+    }
+    .p-accordion-content {
+      border: none;
+      position: relative;
+      &::before {
+        background-color: @gray-50;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 50%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        transition: 0.3s;
+        width: calc(100% - 32px);
+      }
+    }
+    .p-accordion-tab-active {
+      .p-accordion-content {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .accordion {
+    &__button {
+      max-width: 312px;
+    }
+  }
+}
