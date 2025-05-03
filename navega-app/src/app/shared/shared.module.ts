@@ -8,6 +8,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { LogoComponent } from './components/icons/logo/logo.component';
+import { CardSkeletonComponent } from './components/loaders/card-skeleton/card-skeleton.component';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { LogoComponent } from './components/icons/logo/logo.component';
     InputPasswordComponent,
     ButtonComponent,
     LogoComponent,
+    CardSkeletonComponent,
   ],
   imports: [
     CommonModule,
@@ -22,12 +25,14 @@ import { LogoComponent } from './components/icons/logo/logo.component';
     InputTextModule,
     PasswordModule,
     ButtonModule,
+    SkeletonModule,
   ],
   exports: [
     InputAuthIdentifierComponent,
     InputPasswordComponent,
     ButtonComponent,
     LogoComponent,
+    CardSkeletonComponent,
   ],
 })
 export class SharedModule {}
