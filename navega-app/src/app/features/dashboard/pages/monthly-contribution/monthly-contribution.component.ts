@@ -1,7 +1,4 @@
-import {
-  ChartData,
-  ChartOptions,
-} from 'node_modules/chart.js/dist/types/index.d';
+import { ChartData } from 'node_modules/chart.js/dist/types/index.d';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
