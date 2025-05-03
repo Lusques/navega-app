@@ -12,6 +12,9 @@ import { CardSkeletonComponent } from './components/loaders/card-skeleton/card-s
 import { SkeletonModule } from 'primeng/skeleton';
 import { AccordionComponent } from './components/layout/accordion/accordion.component';
 import { AccordionModule } from 'primeng/accordion';
+import { ChartDoughnutComponent } from './components/layout/chart-doughnut/chart-doughnut.component';
+import { Chart } from 'chart.js';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { AccordionModule } from 'primeng/accordion';
     LogoComponent,
     CardSkeletonComponent,
     AccordionComponent,
+    ChartDoughnutComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +34,7 @@ import { AccordionModule } from 'primeng/accordion';
     ButtonModule,
     SkeletonModule,
     AccordionModule,
+    ChartModule,
   ],
   exports: [
     InputAuthIdentifierComponent,
@@ -38,6 +43,7 @@ import { AccordionModule } from 'primeng/accordion';
     LogoComponent,
     CardSkeletonComponent,
     AccordionComponent,
+    ChartDoughnutComponent,
   ],
 })
 export class SharedModule {}
