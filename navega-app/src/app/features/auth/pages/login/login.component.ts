@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,16 +14,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.less'],
 })
 export class LoginComponent implements OnInit {
-  identifier: string = '';
-  password: string = '';
-  constructor() {}
+  authForm!: FormGroup;
+  isIdentifierValid: boolean = true;
+  constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.authForm = this.formBuilder.group({
+      identifier: ['', Validators.compose([Validators.required])],
+      password: ['', Validators.compose([Validators.required])],
+    });
+  }
   updateIdentifier(value: string) {
-    this.identifier = value;
+    this.authForm.patchValue({ identifier: value });
   }
   updatePassword(value: string) {
-    this.password = value;
+    this.authForm.patchValue({ password: value });
   }
 }
