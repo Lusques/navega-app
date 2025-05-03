@@ -1,0 +1,18 @@
+@import "../../../../../styles/abstracts/_variables.less";
+.monthly-contribution {
+  &__accordions {
+    border-top: solid 1px @gray-50;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+::ng-deep {
+  .monthly-contribution {
+    &__button {
+      margin: auto;
+      width: 312px !important;
+    }
+  }
+}
