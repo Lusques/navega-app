@@ -1,3 +1,4 @@
+@import "../../../../styles/abstracts/_mixins.less";
 .main {
   &__container {
     box-sizing: content-box;
@@ -7,7 +8,7 @@
     margin: 16px auto;
     max-width: 1140px;
     padding: 0 24px;
-    transition: .3s;
+    transition: 0.3s;
     &--gap {
       gap: 16px;
     }
@@ -27,3 +28,19 @@
     }
   }
 }
+.responsive(md, {
+  .main{
+    &__column{
+      &--left{
+        background-color: white;
+        max-width: none;
+        position: absolute;
+        z-index: 1;
+        width: 0;
+        &.active{
+          width: calc(100% - 48px);
+        }
+      }
+    }
+  }
+});
