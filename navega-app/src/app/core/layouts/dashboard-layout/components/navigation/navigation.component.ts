@@ -17,42 +17,42 @@ export class NavigationComponent implements OnInit {
     {
       icon: '/assets/icons/file-invoice-dollar.svg',
       text: 'Ver extrato',
-      path: '',
+      path: 'dashboard/statement',
     },
     {
       icon: '/assets/icons/envelope-open-dollar.svg',
       text: 'Contribuição Mensal',
-      path: '',
+      path: 'dashboard/monthly-contribution',
     },
     {
       icon: '/assets/icons/sack-dollar.svg',
       text: 'Contribuição Extra',
-      path: '',
+      path: 'dashboard/extra-contribution',
     },
     {
       icon: '/assets/icons/file-alt.svg',
       text: 'Documentos',
-      path: '',
+      path: 'dashboard/documents',
     },
     {
       icon: '/assets/icons/user-chart.svg',
       text: 'Regime de Tributação',
-      path: '',
+      path: 'dashboard/tax-regime',
     },
     {
       icon: '/assets/icons/comment-dollar.svg',
       text: 'Solicitar Benefício',
-      path: '',
+      path: 'dashboard/request-benefit',
     },
     {
       icon: '/assets/icons/file-chart-line.svg',
       text: 'Extrato Regressivo',
-      path: '',
+      path: 'dashboard/regressive-statement',
     },
     {
       icon: '/assets/icons/info.svg',
       text: 'Informações',
-      path: '',
+      path: 'dashboard/information',
     },
   ];
   constructor() {}

@@ -12,6 +12,7 @@
         class="navigation__list--item"
         *ngFor="let item of sidebarItems; let i = index"
         [routerLink]="item.path"
+        routerLinkActive="active"
       >
         <div>
           <figure class="navigation__list--icon">
