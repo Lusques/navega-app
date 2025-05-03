@@ -1,5 +1,5 @@
 <label class="input__container">
-  <p class="input__label">Email ou CPF</p>
+  <p class="input__label">{{ label }}</p>
   <span class="input__field--container p-input-icon-right">
     <figure class="input__field--figure">
       <img src="/assets/icons/check-circle.svg" alt="icone de checado" />
@@ -8,7 +8,8 @@
       class="input__field--input"
       type="text"
       pInputText
-      value="897.987.987-99"
+      [(ngModel)]="value"
+      (ngModelChange)="valueChanged.emit(value)"
     />
   </span>
 </label>

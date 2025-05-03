@@ -11,8 +11,14 @@
   </p>
   <form class="auth__form">
     <fieldset class="auth__fieldset">
-      <app-input-auth-identifier></app-input-auth-identifier>
-      <app-input-password></app-input-password>
+      <app-input-auth-identifier
+        label="Email ou CPF"
+        (valueChanged)="updateIdentifier($event)"
+      ></app-input-auth-identifier>
+      <app-input-password
+        label="Senha"
+        (passwordChanged)="updatePassword($event)"
+      ></app-input-password>
     </fieldset>
     <app-button></app-button>
   </form>

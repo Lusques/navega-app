@@ -17,7 +17,7 @@ interface AccordionMonthlyContributionItem {
 type AccordionMonthlyContribution = AccordionMonthlyContributionItem[][];
 
 export interface MockApi {
-  '/login': LoginResponse;
+  '/auth': LoginResponse;
   '/monthly-contribution/chart': ChartData;
   '/monthly-contribution/accordion': AccordionMonthlyContribution;
 }
