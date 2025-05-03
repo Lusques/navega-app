@@ -10,6 +10,8 @@ import { ButtonModule } from 'primeng/button';
 import { LogoComponent } from './components/icons/logo/logo.component';
 import { CardSkeletonComponent } from './components/loaders/card-skeleton/card-skeleton.component';
 import { SkeletonModule } from 'primeng/skeleton';
+import { AccordionComponent } from './components/layout/accordion/accordion.component';
+import { AccordionModule } from 'primeng/accordion';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     ButtonComponent,
     LogoComponent,
     CardSkeletonComponent,
+    AccordionComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +29,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     PasswordModule,
     ButtonModule,
     SkeletonModule,
+    AccordionModule,
   ],
   exports: [
     InputAuthIdentifierComponent,
@@ -33,6 +37,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     ButtonComponent,
     LogoComponent,
     CardSkeletonComponent,
+    AccordionComponent,
   ],
 })
 export class SharedModule {}

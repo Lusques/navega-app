@@ -15,16 +15,17 @@
   }
   &__column {
     &--left {
-      max-width: 368px;
+      max-width: 336px;
       overflow: hidden;
       transition: 0.3s;
       width: 0;
       &.active {
-        flex-grow: 1;
+        width: 100%;
       }
     }
     &--right {
-      flex-grow: 1;
+      width: 100%;
+      max-width: none;
     }
   }
 }
