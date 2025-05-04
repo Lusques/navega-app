@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MOCK_API } from '../../mocks/api.mock';
+import { MOCK_API } from '../../../mocks/api.mock';
 import { Observable, of, throwError } from 'rxjs';
 
 @Injectable({
@@ -17,10 +17,10 @@ export class AuthService {
       return throwError(() => new Error('Credenciais inválidas'));
     }
   }
-  logout() {
+  logout(): void {
     localStorage.removeItem('auth_token');
   }
-  isAuthenticated() {
+  isAuthenticated(): boolean {
     return !!localStorage.getItem('auth_token');
   }
 }
