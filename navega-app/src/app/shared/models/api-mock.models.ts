@@ -11,13 +11,14 @@ interface ChartData {
   }[];
 }
 interface AccordionMonthlyContributionItem {
+  type: 'monthly' | 'volunteer';
   title: string;
-  value: string;
+  value: number;
+  percent?: number;
 }
-type AccordionMonthlyContribution = AccordionMonthlyContributionItem[][];
 
 export interface MockApi {
   '/auth': LoginResponse;
   '/monthly-contribution/chart': ChartData;
-  '/monthly-contribution/accordion': AccordionMonthlyContribution;
+  '/monthly-contribution/contribution': AccordionMonthlyContributionItem[];
 }
