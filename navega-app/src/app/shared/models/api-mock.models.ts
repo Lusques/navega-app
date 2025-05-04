@@ -10,7 +10,7 @@ interface ChartData {
     data: number[];
   }[];
 }
-interface AccordionMonthlyContributionItem {
+interface ContributionsItem {
   type: 'monthly' | 'volunteer';
   title: string;
   value: number;
@@ -20,5 +20,5 @@ interface AccordionMonthlyContributionItem {
 export interface MockApi {
   '/auth': LoginResponse;
   '/monthly-contribution/chart': ChartData;
-  '/monthly-contribution/contribution': AccordionMonthlyContributionItem[];
+  '/monthly-contribution/contribution': ContributionsItem[];
 }
