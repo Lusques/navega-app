@@ -2,7 +2,7 @@ import { MockApi } from '../shared/models/api-mock.models';
 
 export const MOCK_API: MockApi = {
   '/auth': {
-    email: 'user@navega.com',
+    identifier: 'user@navega.com',
     password: '123456',
   },
   '/monthly-contribution/chart': {

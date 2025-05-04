@@ -1,5 +1,5 @@
 interface LoginResponse {
-  email: string;
+  identifier: string;
   password: string;
 }
 interface ChartData {

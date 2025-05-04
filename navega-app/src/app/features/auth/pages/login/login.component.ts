@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     if (this.authForm.invalid) return;
 
     const { identifier, password } = this.authForm.value;
-    this.authService.login(identifier, password).subscribe({
+    this.authService.login({ identifier, password }).subscribe({
       next: () => {
         this.router.navigate(['/dashboard']);
       },
