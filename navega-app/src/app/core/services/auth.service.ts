@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MOCK_API } from '../mocks/api.mock';
+import { MOCK_API } from '../../mocks/api.mock';
 import { Observable, of, throwError } from 'rxjs';
 
 @Injectable({
