@@ -24,6 +24,9 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.compose([Validators.required])],
     });
   }
+  onSubmit() {
+    alert('submited');
+  }
   updateIdentifier(value: string) {
     this.authForm.patchValue({ identifier: value });
   }

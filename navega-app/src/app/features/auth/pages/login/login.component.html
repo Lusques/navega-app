@@ -9,7 +9,7 @@
   <p class="auth__login--text">
     Precisamos desta confirmação para dar início ao seu acesso.
   </p>
-  <form class="auth__form" [formGroup]="authForm">
+  <form class="auth__form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
     <fieldset class="auth__fieldset">
       <app-input-auth-identifier
         label="Email ou CPF"
@@ -21,7 +21,7 @@
         (passwordChanged)="updatePassword($event)"
       ></app-input-password>
     </fieldset>
-    <app-button label="Acessar"></app-button>
+    <app-button label="Acessar" type="submit"></app-button>
   </form>
   <div class="auth__forgot-password--container">
     <p class="auth__login--text">
@@ -35,4 +35,3 @@
     <p class="auth__login--text">Versão 0.0.1</p>
   </div>
 </div>
-{{ authForm.valid }}
