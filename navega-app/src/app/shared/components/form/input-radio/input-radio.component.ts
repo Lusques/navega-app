@@ -1,4 +1,4 @@
-import { Categorie } from './../../../models/inputiradio.model';
+import { InputRadioCategorie } from '../../../models/inputs.model';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class InputRadioComponent implements OnInit {
   @Input() name: string = 'a';
-  @Input() categories: Categorie[] = [
+  @Input() categories: InputRadioCategorie[] = [
     { label: 'item A', key: 'A' },
     { label: 'item B', key: 'M' },
   ];

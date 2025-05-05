@@ -1,0 +1,16 @@
+<div class="input-number" *ngIf="!!inputConfig.title">
+  <p class="input-number__symbol">{{ inputConfig.symbol }}</p>
+  <div class="field">
+    <label [for]="inputConfig.inputId" class="input-number__label">
+      {{ inputConfig.title }}</label
+    >
+    <p-inputNumber
+      [(ngModel)]="value6"
+      [inputId]="inputConfig.inputId"
+      mode="decimal"
+      [locale]="inputConfig.local"
+      [minFractionDigits]="inputConfig.minFractionDigits"
+    >
+    </p-inputNumber>
+  </div>
+</div>

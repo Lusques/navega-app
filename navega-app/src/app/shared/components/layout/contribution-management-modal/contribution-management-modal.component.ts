@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Categorie } from 'src/app/shared/models/inputiradio.model';
+import { InputRadioCategorie } from 'src/app/shared/models/inputs.model';
 
 @Component({
   selector: 'app-contribution-management-modal',
@@ -9,7 +9,7 @@ import { Categorie } from 'src/app/shared/models/inputiradio.model';
 export class ContributionManagementModalComponent implements OnInit {
   constructor() {}
 
-  categories: Categorie[] = [
+  categories: InputRadioCategorie[] = [
     { label: 'Contribuição mensal', key: 'monthly' },
     { label: 'Contribuição voluntária', key: 'volunteer' },
   ];
@@ -21,7 +21,7 @@ export class ContributionManagementModalComponent implements OnInit {
   showModalDialog() {
     this.displayModal = true;
   }
-  updateInputRadio(selected: Categorie) {
+  updateInputRadio(selected: InputRadioCategorie) {
     console.log(selected);
   }
 }

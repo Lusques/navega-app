@@ -22,6 +22,8 @@ import { ContributionManagementModalComponent } from './components/layout/contri
 import { DialogModule } from 'primeng/dialog';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputRadioComponent } from './components/form/input-radio/input-radio.component';
+import { InputNumberComponent } from './components/form/input-number/input-number.component';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { InputRadioComponent } from './components/form/input-radio/input-radio.c
     ValueMaskDirective,
     ContributionManagementModalComponent,
     InputRadioComponent,
+    InputNumberComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +53,7 @@ import { InputRadioComponent } from './components/form/input-radio/input-radio.c
     ChartModule,
     DialogModule,
     RadioButtonModule,
+    InputNumberModule,
   ],
   exports: [
     InputAuthIdentifierComponent,
