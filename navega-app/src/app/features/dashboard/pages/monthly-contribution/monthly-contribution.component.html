@@ -1,7 +1,9 @@
 <div class="monthly-contribution__chart">
   <div class="monthly-contribution__chart--header">
     <p class="monthly-contribution__text--text">Total em contribuições</p>
-    <p class="monthly-contribution__text--title">{{contributionTotals.total}}</p>
+    <p class="monthly-contribution__text--title">
+      {{ contributionTotals.total | currencyFormat }}
+    </p>
   </div>
   <div class="monthly-contribution__chart--container">
     <app-chart-doughnut [data]="chartData" width="150px"></app-chart-doughnut>

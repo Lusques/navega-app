@@ -13,10 +13,10 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { AccordionComponent } from './components/layout/accordion/accordion.component';
 import { AccordionModule } from 'primeng/accordion';
 import { ChartDoughnutComponent } from './components/layout/chart-doughnut/chart-doughnut.component';
-import { Chart } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
 import { ChartBadgeComponent } from './components/layout/chart-badge/chart-badge.component';
 import { ContributionTitlePipe } from './pipes/contribution-title.pipe';
+import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { ContributionTitlePipe } from './pipes/contribution-title.pipe';
     ChartDoughnutComponent,
     ChartBadgeComponent,
     ContributionTitlePipe,
+    CurrencyFormatPipe,
   ],
   imports: [
     CommonModule,
@@ -49,7 +50,8 @@ import { ContributionTitlePipe } from './pipes/contribution-title.pipe';
     AccordionComponent,
     ChartDoughnutComponent,
     ChartBadgeComponent,
-    ContributionTitlePipe
+    ContributionTitlePipe,
+    CurrencyFormatPipe
   ],
 })
 export class SharedModule {}
