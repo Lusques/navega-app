@@ -1,7 +1,7 @@
 import { ContributionTotals } from './../../../shared/models/contributions.model';
 import { Injectable } from '@angular/core';
 import { MOCK_API } from 'src/app/mocks/api.mock';
-import { MockApi } from 'src/app/shared/models/api-mock.models';
+import { ContributionsItem, MockApi } from 'src/app/shared/models/api-mock.models';
 import { ChartData } from 'node_modules/chart.js/dist/types/index.d';
 
 type ContributionData = MockApi['/monthly-contribution/contribution'];
@@ -11,7 +11,7 @@ type ContributionData = MockApi['/monthly-contribution/contribution'];
 })
 export class MonthlyContributionService {
   constructor() {
-    this.deleteDataLS();
+    // this.deleteDataLS();
     this.initializeData();
   }
 
@@ -104,5 +104,17 @@ export class MonthlyContributionService {
 
   getVolunteerContributions(): ContributionData {
     return this.getStoredData().filter((item) => item.type === 'volunteer');
+  }
+
+  setNewContribution(newContribution: ContributionsItem): void {
+    try {
+      const currentData = this.getStoredData();
+      const updatedData = [...currentData, newContribution];
+      
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(updatedData));
+    } catch (error) {
+      console.error('Erro ao adicionar contribuição:', error);
+      throw new Error('Falha ao atualizar dados');
+    }
   }
 }

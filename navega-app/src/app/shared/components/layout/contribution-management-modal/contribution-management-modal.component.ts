@@ -16,7 +16,7 @@ export class ContributionManagementModalComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  displayModal: boolean = true;
+  displayModal: boolean = false;
 
   showModalDialog() {
     this.displayModal = true;

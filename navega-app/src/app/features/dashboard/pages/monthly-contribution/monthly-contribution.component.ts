@@ -22,4 +22,18 @@ export class MonthlyContributionComponent implements OnInit {
     this.contributionTotals = this.contributionService.getContributionsTotals();
     this.accordionData = this.contributionService.getDataLS();
   }
+
+  DEBUGaddLS() {
+    this.contributionService.setNewContribution({
+      type: 'monthly',
+      value: 100,
+      percent: 5,
+    });
+    this.contributionService.setNewContribution({
+      type: 'volunteer',
+      value: 100,
+      percent: 5,
+    });
+    window.location.reload();
+  }
 }
