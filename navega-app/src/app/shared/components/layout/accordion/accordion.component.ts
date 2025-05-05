@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import {
+  ContributionsItem,
+  MockApi,
+} from 'src/app/shared/models/api-mock.models';
 
 @Component({
   selector: 'app-accordion',
@@ -6,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accordion.component.less'],
 })
 export class AccordionComponent implements OnInit {
+  @Input() accordion!: ContributionsItem;
   constructor() {}
 
   ngOnInit(): void {}

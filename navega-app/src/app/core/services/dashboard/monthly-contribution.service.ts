@@ -10,6 +10,7 @@ type ChartData = MockApi['/monthly-contribution/chart'];
 })
 export class MonthlyContributionService {
   constructor() {
+    this.deleteDataLS();
     this.initializeData();
   }
 

@@ -4,7 +4,7 @@
     <p class="monthly-contribution__text--title">R$ 999.999,99</p>
   </div>
   <div class="monthly-contribution__chart--container">
-    <app-chart-doughnut [data]="data" width="150px"></app-chart-doughnut>
+    <app-chart-doughnut [data]="chartData" width="150px"></app-chart-doughnut>
   </div>
   <div class="monthly-contribution__chart--badges">
     <app-chart-badge
@@ -20,8 +20,10 @@
   </div>
 </div>
 <div class="monthly-contribution__accordions">
-  <app-accordion></app-accordion>
-  <app-accordion></app-accordion>
+  <app-accordion
+    *ngFor="let item of accordionData"
+    [accordion]="item"
+  ></app-accordion>
   <app-button
     class="monthly-contribution__button"
     label="Incluir contribuição"

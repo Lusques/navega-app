@@ -1,5 +1,7 @@
 import { ChartData } from 'node_modules/chart.js/dist/types/index.d';
 import { Component, OnInit } from '@angular/core';
+import { MonthlyContributionService } from 'src/app/core/services/dashboard/monthly-contribution.service';
+import { MockApi } from 'src/app/shared/models/api-mock.models';
 
 @Component({
   selector: 'app-monthly-contribution',
@@ -7,19 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./monthly-contribution.component.less'],
 })
 export class MonthlyContributionComponent implements OnInit {
-  data!: ChartData<'doughnut'>;
-  constructor() {}
+  chartData!: ChartData<'doughnut'>;
+  accordionData!: MockApi['/monthly-contribution/contribution'];
+  constructor(private contributionService: MonthlyContributionService) {}
 
   ngOnInit(): void {
-    this.data = {
-      datasets: [
-        {
-          backgroundColor: ['#594CBE', '#E22E6F'],
-          borderColor: ['transparent'],
-          borderWidth: 0,
-          data: [100, 40],
-        },
-      ],
-    };
+    this.chartData = this.contributionService.getChartData();
+    this.accordionData = this.contributionService.getDataLS()
   }
 }

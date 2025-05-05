@@ -16,6 +16,7 @@ import { ChartDoughnutComponent } from './components/layout/chart-doughnut/chart
 import { Chart } from 'chart.js';
 import { ChartModule } from 'primeng/chart';
 import { ChartBadgeComponent } from './components/layout/chart-badge/chart-badge.component';
+import { ContributionTitlePipe } from './pipes/contribution-title.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ChartBadgeComponent } from './components/layout/chart-badge/chart-badge
     AccordionComponent,
     ChartDoughnutComponent,
     ChartBadgeComponent,
+    ContributionTitlePipe,
   ],
   imports: [
     CommonModule,
@@ -47,6 +49,7 @@ import { ChartBadgeComponent } from './components/layout/chart-badge/chart-badge
     AccordionComponent,
     ChartDoughnutComponent,
     ChartBadgeComponent,
+    ContributionTitlePipe
   ],
 })
 export class SharedModule {}

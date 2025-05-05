@@ -16,8 +16,7 @@ export const MOCK_API: MockApi = {
     ],
   },
   '/monthly-contribution/contribution': [
-    { type: 'monthly', title: 'Valor da contribuição', value: 500, percent: 5 },
-    { type: 'monthly', title: 'Valor da contribuição', value: 500, percent: 5 },
-    { type: 'volunteer', title: 'Valor da contribuição', value: 500 },
+    { type: 'monthly', title: 'Contribuição mensal', value: 100, percent: 5 },
+    { type: 'volunteer', title: 'Contribuição vonluntária', value: 40 },
   ],
 };

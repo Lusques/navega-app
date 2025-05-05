@@ -1,8 +1,9 @@
-interface LoginResponse {
+export type ContributionType = 'monthly' | 'volunteer';
+export interface LoginResponse {
   identifier: string;
   password: string;
 }
-interface ChartData {
+export interface ChartData {
   datasets: {
     backgroundColor: string[];
     borderColor: string[];
@@ -10,8 +11,8 @@ interface ChartData {
     data: number[];
   }[];
 }
-interface ContributionsItem {
-  type: 'monthly' | 'volunteer';
+export interface ContributionsItem {
+  type: ContributionType;
   title: string;
   value: number;
   percent?: number;
