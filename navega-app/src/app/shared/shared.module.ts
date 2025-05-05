@@ -20,6 +20,8 @@ import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
 import { ValueMaskDirective } from './directives/value-mask.directive';
 import { ContributionManagementModalComponent } from './components/layout/contribution-management-modal/contribution-management-modal.component';
 import { DialogModule } from 'primeng/dialog';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { InputRadioComponent } from './components/form/input-radio/input-radio.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { DialogModule } from 'primeng/dialog';
     CurrencyFormatPipe,
     ValueMaskDirective,
     ContributionManagementModalComponent,
+    InputRadioComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +49,7 @@ import { DialogModule } from 'primeng/dialog';
     AccordionModule,
     ChartModule,
     DialogModule,
+    RadioButtonModule,
   ],
   exports: [
     InputAuthIdentifierComponent,

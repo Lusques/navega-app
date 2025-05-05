@@ -16,7 +16,29 @@
       </p>
     </div>
   </ng-template>
-  <p>teste</p>
+  <div class="contribution-management-modal__body">
+    <form class="contribution-management-modal__form">
+      <fieldset
+        class="contribution-management-modal__fieldset contribution-management-modal__fieldset--container"
+      >
+        <fieldset
+          class="contribution-management-modal__fieldset contribution-management-modal__fieldset--fields"
+        >
+          <app-input-auth-identifier
+            label="Valor da Contribuição"
+          ></app-input-auth-identifier>
+          <app-input-auth-identifier
+            label="Porcentagem do salário"
+          ></app-input-auth-identifier>
+        </fieldset>
+        <fieldset
+          class="contribution-management-modal__fieldset contribution-management-modal__fieldset--fields"
+        >
+          <app-input-radio></app-input-radio>
+        </fieldset>
+      </fieldset>
+    </form>
+  </div>
   <ng-template pTemplate="footer">
     <app-button
       label="Adicionar contribuição"
