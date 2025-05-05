@@ -1,9 +1,13 @@
-<div class="field-radiobutton">
-  <p-radioButton
-    name="city"
-    value="Chicago"
-    [(ngModel)]="city"
-    inputId="city1"
-  ></p-radioButton>
-  <label for="city1">label</label>
+<div class="input-radio">
+  <div *ngFor="let category of categories" class="field-checkbox">
+    <p-radioButton
+      [inputId]="category.key"
+      [name]="name"
+      [value]="category"
+      [(ngModel)]="selectedCategory"
+      [disabled]="category.key === 'R'"
+      (ngModelChange)="selectedChanged.emit(selectedCategory)"
+    ></p-radioButton>
+    <label [for]="category.key">{{ category.label }}</label>
+  </div>
 </div>

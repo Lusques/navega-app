@@ -34,7 +34,11 @@
         <fieldset
           class="contribution-management-modal__fieldset contribution-management-modal__fieldset--fields"
         >
-          <app-input-radio></app-input-radio>
+          <app-input-radio
+            name="contribution"
+            [categories]="categories"
+            (selectedChanged)="updateInputRadio($event)"
+          ></app-input-radio>
         </fieldset>
       </fieldset>
     </form>

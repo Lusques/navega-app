@@ -1,11 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-interface RadioData {
-  name: string;
-  value: string;
-  key: string;
-  label: string;
-}
+import { Categorie } from './../../../models/inputiradio.model';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-radio',
@@ -13,22 +7,17 @@ interface RadioData {
   styleUrls: ['./input-radio.component.less'],
 })
 export class InputRadioComponent implements OnInit {
-  @Input() radioData!: RadioData;
+  @Input() name: string = 'a';
+  @Input() categories: Categorie[] = [
+    { label: 'item A', key: 'A' },
+    { label: 'item B', key: 'M' },
+  ];
+  @Output() selectedChanged = new EventEmitter();
   constructor() {}
-
-  city!: string;
-  city1!: string;
 
   selectedCategory: any = null;
 
-  categories: any[] = [
-    { name: 'Accounting', key: 'A' },
-    { name: 'Marketing', key: 'M' },
-    { name: 'Production', key: 'P' },
-    { name: 'Research', key: 'R' },
-  ];
-
   ngOnInit() {
-    this.selectedCategory = this.categories[1];
+    this.selectedCategory = this.categories[0];
   }
 }
