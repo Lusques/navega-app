@@ -1,0 +1,26 @@
+@import "../../../../../styles//abstracts/_variables.less";
+::ng-deep {
+  .input-number {
+    align-items: end;
+    color: @gray-90;
+    display: flex;
+    &__label {
+      font-size: 12px;
+      width: 100%;
+    }
+    &__symbol {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    & .p-inputnumber-input {
+      border: none;
+      border-bottom: solid 1px @gray-90;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    & .field {
+      margin: 0;
+    }
+  }
+}

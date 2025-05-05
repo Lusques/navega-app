@@ -8,6 +8,7 @@ type variants = 'default' | 'ghost';
 export class ButtonComponent implements OnInit {
   @Input() styleClass: string = '';
   @Input() label: string = 'label';
+  @Input() type: string = 'button';
   @Input() variant: variants = 'default';
 
   constructor() {}

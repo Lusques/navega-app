@@ -7,22 +7,24 @@
             <figure class="accordion__icon">
               <img src="/assets/icons/coins.svg" alt="icone de moedas" />
             </figure>
-            <p class="accordion__header--title">Contribuição mensal</p>
+            <p class="accordion__header--title">
+              {{ accordion.type | contributionTitle }}
+            </p>
           </div>
         </div>
       </ng-template>
       <ng-template pTemplate="content">
         <div class="accordion__body">
-          <div class="accordion__body--line">
+          <div class="accordion__body--line" *ngIf="!!accordion.value">
             <p class="accordion__body--item">Valor da contribuição</p>
-            <p class="accordion__body--item">
-              <b> R$ 500,00 </b>
+            <p class="accordion__body--item" appValueMask>
+              <b> {{ accordion.value | currencyFormat }} </b>
             </p>
           </div>
-          <div class="accordion__body--line">
+          <div class="accordion__body--line" *ngIf="accordion.percent">
             <p class="accordion__body--item">Porcentagem do salário</p>
             <p class="accordion__body--item">
-              <b> 5% </b>
+              <b> {{ accordion.percent }}% </b>
             </p>
           </div>
           <app-button

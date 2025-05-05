@@ -1,29 +1,38 @@
 <div class="monthly-contribution__chart">
   <div class="monthly-contribution__chart--header">
     <p class="monthly-contribution__text--text">Total em contribuições</p>
-    <p class="monthly-contribution__text--title">R$ 999.999,99</p>
+    <p class="monthly-contribution__text--title" appValueMask>
+      {{ contributionTotals.total | currencyFormat }}
+    </p>
   </div>
   <div class="monthly-contribution__chart--container">
-    <app-chart-doughnut [data]="data" width="150px"></app-chart-doughnut>
+    <app-chart-doughnut [data]="chartData" width="150px"></app-chart-doughnut>
   </div>
   <div class="monthly-contribution__chart--badges">
     <app-chart-badge
-      color="#E22E6F"
+      [color]="chartColors[0]"
       title="Contribuição mensal"
-      value="R$ 499.999,99"
+      [value]="contributionTotals.monthlySum"
     ></app-chart-badge>
     <app-chart-badge
-      color="#594CBE"
+      [color]="chartColors[1]"
       title="Contribuição voluntária"
-      value="R$ 499.999,99"
+      [value]="contributionTotals.volunteerSum"
     ></app-chart-badge>
   </div>
 </div>
 <div class="monthly-contribution__accordions">
-  <app-accordion></app-accordion>
-  <app-accordion></app-accordion>
+  <app-accordion
+    *ngFor="let item of accordionData"
+    [accordion]="item"
+  ></app-accordion>
   <app-button
     class="monthly-contribution__button"
     label="Incluir contribuição"
+    (click)="showModalDialog()"
   ></app-button>
 </div>
+<app-contribution-management-modal
+  [displayModal]="displayModal"
+  (displayHidden)="hideModalDialog()"
+></app-contribution-management-modal>

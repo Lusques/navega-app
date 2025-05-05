@@ -9,12 +9,19 @@
   <p class="auth__login--text">
     Precisamos desta confirmação para dar início ao seu acesso.
   </p>
-  <form class="auth__form">
+  <form class="auth__form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
     <fieldset class="auth__fieldset">
-      <app-input-auth-identifier></app-input-auth-identifier>
-      <app-input-password></app-input-password>
+      <app-input-auth-identifier
+        label="Email ou CPF"
+        [value]="authForm.get('identifier')?.value"
+        (valueChanged)="updateIdentifier($event)"
+      ></app-input-auth-identifier>
+      <app-input-password
+        label="Senha"
+        (passwordChanged)="updatePassword($event)"
+      ></app-input-password>
     </fieldset>
-    <app-button></app-button>
+    <app-button label="Acessar" type="submit"></app-button>
   </form>
   <div class="auth__forgot-password--container">
     <p class="auth__login--text">
