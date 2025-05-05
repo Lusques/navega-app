@@ -17,6 +17,7 @@ import { ChartModule } from 'primeng/chart';
 import { ChartBadgeComponent } from './components/layout/chart-badge/chart-badge.component';
 import { ContributionTitlePipe } from './pipes/contribution-title.pipe';
 import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
+import { ValueMaskDirective } from './directives/value-mask.directive';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
     ChartBadgeComponent,
     ContributionTitlePipe,
     CurrencyFormatPipe,
+    ValueMaskDirective,
   ],
   imports: [
     CommonModule,
@@ -51,7 +53,8 @@ import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
     ChartDoughnutComponent,
     ChartBadgeComponent,
     ContributionTitlePipe,
-    CurrencyFormatPipe
+    CurrencyFormatPipe,
+    ValueMaskDirective,
   ],
 })
 export class SharedModule {}

@@ -6,5 +6,5 @@
     ></div>
     <p class="chart-badge__title">{{ title }}</p>
   </div>
-  <p class="chart-badge__subtitle">{{ value | currencyFormat }}</p>
+  <p class="chart-badge__subtitle" appValueMask>{{ value | currencyFormat }}</p>
 </div>

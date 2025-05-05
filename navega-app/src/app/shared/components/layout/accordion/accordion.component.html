@@ -17,8 +17,8 @@
         <div class="accordion__body">
           <div class="accordion__body--line" *ngIf="!!accordion.value">
             <p class="accordion__body--item">Valor da contribuição</p>
-            <p class="accordion__body--item">
-              <b> R$ {{ accordion.value }},00 </b>
+            <p class="accordion__body--item" appValueMask>
+              <b> {{ accordion.value | currencyFormat }} </b>
             </p>
           </div>
           <div class="accordion__body--line" *ngIf="accordion.percent">

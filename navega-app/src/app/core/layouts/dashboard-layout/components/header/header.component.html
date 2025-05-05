@@ -5,13 +5,17 @@
         <img src="/assets/images/avatar.png" alt="avatar do usuário" />
       </figure>
       <div class="header__icons--container">
-        <figure class="header__icons--icon">
+        <figure class="header__icons--icon" routerLink="/dashboard/statement">
           <img src="/assets/icons/home-lg.svg" alt="ícone de home" />
         </figure>
         <figure class="header__icons--icon">
-          <img src="/assets/icons/eye.svg" alt="ícone de olho" />
+          <img
+            src="/assets/icons/eye.svg"
+            alt="ícone de olho"
+            (click)="toggleMask()"
+          />
         </figure>
-        <figure class="header__icons--icon">
+        <figure class="header__icons--icon" (click)="clearData()">
           <img src="/assets/icons/repeat-alt.svg" alt="ícone de refresh" />
         </figure>
       </div>
