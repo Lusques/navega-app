@@ -7,7 +7,6 @@ export interface LoginResponse {
 }
 export interface ContributionsItem {
   type: ContributionType;
-  title: string;
   value: number;
   percent?: number;
 }

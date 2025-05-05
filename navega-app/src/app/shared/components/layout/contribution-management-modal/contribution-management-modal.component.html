@@ -1,0 +1,33 @@
+<p-dialog
+  [(visible)]="displayModal"
+  [modal]="true"
+  [style]="{ width: '420px' }"
+  [draggable]="false"
+  [resizable]="false"
+  class="contribution-management-modal"
+>
+  <ng-template pTemplate="header">
+    <div class="contribution-management-modal__header--flex">
+      <figure>
+        <img src="/assets/icons/coins.svg" alt="icone de moedas" />
+      </figure>
+      <p class="contribution-management-modal__header--title">
+        Dados da Contribuição
+      </p>
+    </div>
+  </ng-template>
+  <p>teste</p>
+  <ng-template pTemplate="footer">
+    <app-button
+      label="Adicionar contribuição"
+      styleClass="contribution-management-modal__footer--button"
+      type="submit"
+    ></app-button>
+  </ng-template>
+</p-dialog>
+
+<p-button
+  (click)="showModalDialog()"
+  icon="pi pi-external-link"
+  label="Show"
+></p-button>

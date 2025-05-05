@@ -18,6 +18,8 @@ import { ChartBadgeComponent } from './components/layout/chart-badge/chart-badge
 import { ContributionTitlePipe } from './pipes/contribution-title.pipe';
 import { CurrencyFormatPipe } from './pipes/currency-format.pipe';
 import { ValueMaskDirective } from './directives/value-mask.directive';
+import { ContributionManagementModalComponent } from './components/layout/contribution-management-modal/contribution-management-modal.component';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { ValueMaskDirective } from './directives/value-mask.directive';
     ContributionTitlePipe,
     CurrencyFormatPipe,
     ValueMaskDirective,
+    ContributionManagementModalComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +45,7 @@ import { ValueMaskDirective } from './directives/value-mask.directive';
     SkeletonModule,
     AccordionModule,
     ChartModule,
+    DialogModule,
   ],
   exports: [
     InputAuthIdentifierComponent,
@@ -55,6 +59,7 @@ import { ValueMaskDirective } from './directives/value-mask.directive';
     ContributionTitlePipe,
     CurrencyFormatPipe,
     ValueMaskDirective,
+    ContributionManagementModalComponent,
   ],
 })
 export class SharedModule {}
