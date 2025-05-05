@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { InputNumberConfig } from 'src/app/shared/models/inputs.model';
 @Component({
   selector: 'app-input-number',
@@ -10,10 +10,11 @@ export class InputNumberComponent implements OnInit {
     symbol: 'symbol',
     inputId: 'inputId',
     title: 'title',
-    local: 'local',
+    locale: 'local',
     minFractionDigits: 2,
   };
-  value6: number = 115744;
+  @Output() inputChanged = new EventEmitter();
+  inputValue: number = 0;
   constructor() {}
 
   ngOnInit(): void {}

@@ -5,10 +5,11 @@
       {{ inputConfig.title }}</label
     >
     <p-inputNumber
-      [(ngModel)]="value6"
+      [(ngModel)]="inputValue"
+      (ngModelChange)="inputChanged.emit(inputValue)"
       [inputId]="inputConfig.inputId"
       mode="decimal"
-      [locale]="inputConfig.local"
+      [locale]="inputConfig.locale"
       [minFractionDigits]="inputConfig.minFractionDigits"
     >
     </p-inputNumber>

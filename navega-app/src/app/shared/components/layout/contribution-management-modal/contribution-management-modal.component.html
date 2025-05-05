@@ -24,8 +24,14 @@
         <fieldset
           class="contribution-management-modal__fieldset contribution-management-modal__fieldset--fields"
         >
-          <app-input-number></app-input-number>
-          <app-input-number></app-input-number>
+          <app-input-number
+            [inputConfig]="inputsConfig[0]"
+            (inputChanged)="updateInputContribution($event)"
+          ></app-input-number>
+          <app-input-number
+            [inputConfig]="inputsConfig[1]"
+            (inputChanged)="updateInputPercent($event)"
+          ></app-input-number>
         </fieldset>
         <fieldset
           class="contribution-management-modal__fieldset contribution-management-modal__fieldset--fields"
@@ -44,6 +50,7 @@
       label="Adicionar contribuição"
       styleClass="contribution-management-modal__footer--button"
       type="submit"
+      (click)="onSubmit()"
     ></app-button>
   </ng-template>
 </p-dialog>
