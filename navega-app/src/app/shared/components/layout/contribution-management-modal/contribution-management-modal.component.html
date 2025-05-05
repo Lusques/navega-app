@@ -4,6 +4,7 @@
   [style]="{ width: '420px' }"
   [draggable]="false"
   [resizable]="false"
+  (onHide)="displayHidden.emit()"
   class="contribution-management-modal"
 >
   <ng-template pTemplate="header">
@@ -17,7 +18,11 @@
     </div>
   </ng-template>
   <div class="contribution-management-modal__body">
-    <form class="contribution-management-modal__form">
+    <form
+      class="contribution-management-modal__form"
+      [formGroup]="modalForm"
+      (ngSubmit)="onSubmit()"
+    >
       <fieldset
         class="contribution-management-modal__fieldset contribution-management-modal__fieldset--container"
       >
@@ -43,20 +48,15 @@
           ></app-input-radio>
         </fieldset>
       </fieldset>
+      <fieldset
+        class="contribution-management-modal__fieldset contribution-management-modal__footer"
+      >
+        <app-button
+          label="Adicionar contribuição"
+          styleClass="contribution-management-modal__footer--button"
+          type="submit"
+        ></app-button>
+      </fieldset>
     </form>
   </div>
-  <ng-template pTemplate="footer">
-    <app-button
-      label="Adicionar contribuição"
-      styleClass="contribution-management-modal__footer--button"
-      type="submit"
-      (click)="onSubmit()"
-    ></app-button>
-  </ng-template>
 </p-dialog>
-
-<p-button
-  (click)="showModalDialog()"
-  icon="pi pi-external-link"
-  label="Show"
-></p-button>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MonthlyContributionService } from 'src/app/core/services/dashboard/monthly-contribution.service';
 import {
@@ -12,6 +12,8 @@ import {
   styleUrls: ['./contribution-management-modal.component.less'],
 })
 export class ContributionManagementModalComponent implements OnInit {
+  @Input() displayModal: boolean = false;
+  @Output() displayHidden = new EventEmitter();
   constructor(
     private formBuilder: FormBuilder,
     private contributionService: MonthlyContributionService
@@ -47,25 +49,14 @@ export class ContributionManagementModalComponent implements OnInit {
       percent: [undefined, Validators.compose([])],
     });
   }
-
-  displayModal: boolean = true;
-
-  showModalDialog() {
-    this.displayModal = true;
-  }
   updateInputContribution(value: number) {
-    alert('in contribution');
     this.modalForm.patchValue({ value: value });
-    console.log(value);
   }
   updateInputPercent(value: number) {
-    alert('in percent');
     this.modalForm.patchValue({ percent: value });
-    console.log(value);
   }
   updateInputRadio(selected: InputRadioCategorie) {
     this.modalForm.patchValue({ type: selected.key });
-    console.log(selected.key);
   }
 
   onSubmitError(): string {
@@ -89,10 +80,10 @@ export class ContributionManagementModalComponent implements OnInit {
     const { type, value, percent } = this.modalForm.value;
 
     if (this.modalForm.invalid) {
-      const errorMessage = this.onSubmitError();
-      alert(errorMessage);
+      this.onSubmitError();
       return;
     }
     this.contributionService.setNewContribution({ type, value, percent });
+    window.location.reload();
   }
 }

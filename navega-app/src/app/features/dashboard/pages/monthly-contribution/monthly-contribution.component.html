@@ -29,7 +29,10 @@
   <app-button
     class="monthly-contribution__button"
     label="Incluir contribuição"
-    (click)="DEBUGaddLS()"
+    (click)="showModalDialog()"
   ></app-button>
 </div>
-<app-contribution-management-modal></app-contribution-management-modal>
+<app-contribution-management-modal
+  [displayModal]="displayModal"
+  (displayHidden)="hideModalDialog()"
+></app-contribution-management-modal>

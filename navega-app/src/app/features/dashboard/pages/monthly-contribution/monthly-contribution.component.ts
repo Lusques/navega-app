@@ -14,6 +14,7 @@ export class MonthlyContributionComponent implements OnInit {
   chartColors!: string[];
   contributionTotals!: ContributionTotals;
   accordionData!: MockApi['/monthly-contribution/contribution'];
+  displayModal: boolean = false;
   constructor(private contributionService: MonthlyContributionService) {}
 
   ngOnInit(): void {
@@ -22,18 +23,10 @@ export class MonthlyContributionComponent implements OnInit {
     this.contributionTotals = this.contributionService.getContributionsTotals();
     this.accordionData = this.contributionService.getDataLS();
   }
-
-  DEBUGaddLS() {
-    this.contributionService.setNewContribution({
-      type: 'monthly',
-      value: 100,
-      percent: 5,
-    });
-    this.contributionService.setNewContribution({
-      type: 'volunteer',
-      value: 100,
-      percent: 5,
-    });
-    window.location.reload();
+  showModalDialog() {
+    this.displayModal = true;
+  }
+  hideModalDialog() {
+    this.displayModal = false;
   }
 }
