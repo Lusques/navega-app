@@ -1,9 +1,10 @@
+import { ContributionTotals } from './../../../shared/models/contributions.model';
 import { Injectable } from '@angular/core';
 import { MOCK_API } from 'src/app/mocks/api.mock';
 import { MockApi } from 'src/app/shared/models/api-mock.models';
+import { ChartData } from 'node_modules/chart.js/dist/types/index.d';
 
 type ContributionData = MockApi['/monthly-contribution/contribution'];
-type ChartData = MockApi['/monthly-contribution/chart'];
 
 @Injectable({
   providedIn: 'root',
@@ -65,9 +66,12 @@ export class MonthlyContributionService {
     }
   }
 
-  getChartData(): ChartData {
-    const data = this.getStoredData();
+  getChartColors(): string[] {
+    return ['#594CBE', '#E22E6F'];
+  }
 
+  getContributionsTotals(): ContributionTotals {
+    const data = this.getStoredData();
     const monthlySum = data
       .filter((item) => item.type === 'monthly')
       .reduce((sum, item) => sum + item.value, 0);
@@ -76,10 +80,16 @@ export class MonthlyContributionService {
       .filter((item) => item.type === 'volunteer')
       .reduce((sum, item) => sum + item.value, 0);
 
+    const total = monthlySum + volunteerSum;
+    return { monthlySum, volunteerSum, total };
+  }
+
+  getChartData(): ChartData<'doughnut'> {
+    const { monthlySum, volunteerSum } = this.getContributionsTotals();
     return {
       datasets: [
         {
-          backgroundColor: ['#594CBE', '#E22E6F'],
+          backgroundColor: this.getChartColors(),
           borderColor: ['transparent'],
           borderWidth: 0,
           data: [monthlySum, volunteerSum],

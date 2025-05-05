@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ChartBadgeComponent implements OnInit {
   @Input() color: string = '';
   @Input() title: string = '';
-  @Input() value: string = '';
+  @Input() value!: number;
   constructor() {}
 
   ngOnInit(): void {}
