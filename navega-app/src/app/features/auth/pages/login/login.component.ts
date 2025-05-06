@@ -33,6 +33,10 @@ export class LoginComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
+        const errorMessage = err
+          ? `Ocorreu um erro durante o login:\n${err}`
+          : 'Ocorreu um erro durante o login. Por favor, tente novamente.';
+        alert(errorMessage);
       },
     });
   }

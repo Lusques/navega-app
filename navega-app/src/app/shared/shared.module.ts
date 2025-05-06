@@ -24,6 +24,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputRadioComponent } from './components/form/input-radio/input-radio.component';
 import { InputNumberComponent } from './components/form/input-number/input-number.component';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { MenuComponent } from './components/layout/menu/menu.component';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ContributionManagementModalComponent,
     InputRadioComponent,
     InputNumberComponent,
+    MenuComponent,
   ],
   imports: [
     CommonModule,
@@ -55,6 +58,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     RadioButtonModule,
     InputNumberModule,
     ReactiveFormsModule,
+    MenuModule,
   ],
   exports: [
     InputAuthIdentifierComponent,
@@ -69,6 +73,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     CurrencyFormatPipe,
     ValueMaskDirective,
     ContributionManagementModalComponent,
+    MenuComponent,
   ],
 })
 export class SharedModule {}

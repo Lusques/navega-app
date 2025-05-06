@@ -40,6 +40,9 @@ const routes: Routes = [
       },
     ],
   },
+  { path: 'login', redirectTo: '/auth/login', pathMatch: 'full' },
+  { path: 'forgot-password', redirectTo: '/auth/forgot-password', pathMatch: 'full' },
+  { path: '**', redirectTo: 'dashboard/monthly-contribution', pathMatch: 'full' },
 ];
 
 @NgModule({
