@@ -1,0 +1,7 @@
+.responsive(@size, @rules) {
+  & when (@size = sm) { @media (max-width: 576px) { @rules(); } }
+  & when (@size = md) { @media (max-width: 768px) { @rules(); } }
+  & when (@size = lg) { @media (max-width: 1024px) { @rules(); } }
+  & when (@size = xl) { @media (max-width: 1200px) { @rules(); } }
+  & when (@size = xxl) { @media (max-width: 1500px) { @rules(); } }
+}

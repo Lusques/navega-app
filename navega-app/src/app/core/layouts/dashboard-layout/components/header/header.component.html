@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="header__top" [ngClass]="{ top__hidden: hiddenTopHeader }">
+    <div class="header__container header__container--flex">
+      <figure class="header__avatar--figure" (click)="toggleMenu($event)">
+        <img src="/assets/images/avatar.png" alt="avatar do usuário" />
+      </figure>
+      <div class="header__icons--container">
+        <figure class="header__icons--icon" routerLink="/dashboard/statement">
+          <img src="/assets/icons/home-lg.svg" alt="ícone de home" />
+        </figure>
+        <figure class="header__icons--icon">
+          <img
+            src="/assets/icons/eye.svg"
+            alt="ícone de olho"
+            (click)="toggleMask()"
+          />
+        </figure>
+        <figure class="header__icons--icon" (click)="clearData()">
+          <img src="/assets/icons/repeat-alt.svg" alt="ícone de refresh" />
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="header__container header__container--border">
+      <div class="header__nav--container" (click)="notifyClick()">
+        <figure class="header__nav--figure">
+          <img src="/assets/icons/arrow-left.svg" alt="seta para esquerda" />
+        </figure>
+        <span>Meu plano</span>
+      </div>
+    </div>
+  </div>
+</header>
+<app-menu #menu [items]="items"></app-menu>

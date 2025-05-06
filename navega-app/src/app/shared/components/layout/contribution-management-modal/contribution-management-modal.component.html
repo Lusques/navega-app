@@ -1,0 +1,62 @@
+<p-dialog
+  [(visible)]="displayModal"
+  [modal]="true"
+  [style]="{ width: '420px' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="displayHidden.emit()"
+  class="contribution-management-modal"
+>
+  <ng-template pTemplate="header">
+    <div class="contribution-management-modal__header--flex">
+      <figure>
+        <img src="/assets/icons/coins.svg" alt="icone de moedas" />
+      </figure>
+      <p class="contribution-management-modal__header--title">
+        Dados da Contribuição
+      </p>
+    </div>
+  </ng-template>
+  <div class="contribution-management-modal__body">
+    <form
+      class="contribution-management-modal__form"
+      [formGroup]="modalForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <fieldset
+        class="contribution-management-modal__fieldset contribution-management-modal__fieldset--container"
+      >
+        <fieldset
+          class="contribution-management-modal__fieldset contribution-management-modal__fieldset--fields"
+        >
+          <app-input-number
+            [inputConfig]="inputsConfig[0]"
+            (inputChanged)="updateInputContribution($event)"
+          ></app-input-number>
+          <app-input-number
+            [inputConfig]="inputsConfig[1]"
+            (inputChanged)="updateInputPercent($event)"
+          ></app-input-number>
+        </fieldset>
+        <fieldset
+          class="contribution-management-modal__fieldset contribution-management-modal__fieldset--fields"
+        >
+          <app-input-radio
+            name="contribution"
+            [categories]="categories"
+            (selectedChanged)="updateInputRadio($event)"
+          ></app-input-radio>
+        </fieldset>
+      </fieldset>
+      <fieldset
+        class="contribution-management-modal__fieldset contribution-management-modal__footer"
+      >
+        <app-button
+          label="Adicionar contribuição"
+          styleClass="contribution-management-modal__footer--button"
+          type="submit"
+        ></app-button>
+      </fieldset>
+    </form>
+  </div>
+</p-dialog>

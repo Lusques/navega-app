@@ -1,0 +1,37 @@
+<div class="auth__login">
+  <h1 class="auth__login--h1">
+    <app-logo styleClass="auth__login--figure"></app-logo>
+  </h1>
+  <h3 class="auth__login--title">
+    Boas-vindas ao Portal! <br />
+    Para começar, qual seu email ou CPF?
+  </h3>
+  <p class="auth__login--text">
+    Precisamos desta confirmação para dar início ao seu acesso.
+  </p>
+  <form class="auth__form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <fieldset class="auth__fieldset">
+      <app-input-auth-identifier
+        label="Email ou CPF"
+        [value]="authForm.get('identifier')?.value"
+        (valueChanged)="updateIdentifier($event)"
+      ></app-input-auth-identifier>
+      <app-input-password
+        label="Senha"
+        (passwordChanged)="updatePassword($event)"
+      ></app-input-password>
+    </fieldset>
+    <app-button label="Acessar" type="submit"></app-button>
+  </form>
+  <div class="auth__forgot-password--container">
+    <p class="auth__login--text">
+      Esqueceu a senha?
+      <span
+        class="auth__forgot-password--link"
+        routerLink="/auth/forgot-password"
+        >Acesse aqui</span
+      >
+    </p>
+    <p class="auth__login--text">Versão 0.0.1</p>
+  </div>
+</div>

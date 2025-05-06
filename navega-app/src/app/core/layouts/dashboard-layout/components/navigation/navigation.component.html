@@ -1,0 +1,29 @@
+<aside class="navigation">
+  <section class="navigation__header">
+    <figure class="navigation__header--figure">
+      <img src="/assets/icons/address-card.svg" alt="ícone de identificação" />
+    </figure>
+    <p class="navigation__header--title">Meu plano</p>
+    <p class="navigation__header--subtitle">O que você quer fazer?</p>
+  </section>
+  <section class="navigation__body">
+    <ul class="navigation__list">
+      <li
+        class="navigation__list--item"
+        *ngFor="let item of sidebarItems; let i = index"
+        [routerLink]="item.path"
+        routerLinkActive="active"
+      >
+        <div>
+          <figure class="navigation__list--icon">
+            <img [src]="item.icon" [alt]="item.alt || 'icon'" />
+          </figure>
+          <span>{{ item.text }}</span>
+        </div>
+        <figure class="navigation__list--arrow">
+          <img src="/assets/icons/chevron-right.svg" alt="icon" />
+        </figure>
+      </li>
+    </ul>
+  </section>
+</aside>

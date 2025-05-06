@@ -1,0 +1,63 @@
+@import "../../../../../styles/abstracts/_variables.less";
+::ng-deep {
+  .contribution-management-modal {
+    & .p-dialog-header {
+      position: relative;
+      padding: 16px 24px 8px;
+
+      &::before {
+        background-color: @gray-50;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: 0.3s;
+        width: calc(100% - 48px);
+      }
+    }
+    & .p-dialog-content {
+      padding: 12px 24px 16px;
+    }
+    & .p-dialog-footer {
+      padding: 0px 24px 16px;
+    }
+    &__footer {
+      padding: 48px 0 0 !important;
+      &--button {
+        margin: 0 !important;
+        width: 100% !important;
+      }
+    }
+  }
+}
+.contribution-management-modal {
+  &__header {
+    &--flex {
+      align-items: center;
+      display: flex;
+      gap: 4px;
+    }
+    &--title {
+      margin: 0;
+    }
+  }
+  & &__fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    &--container {
+      display: flex;
+      gap: 16px;
+    }
+    &--fields {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 12px;
+      max-width: 50%;
+    }
+  }
+}

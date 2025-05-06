@@ -1,0 +1,36 @@
+@import "../../../../../styles/abstracts/_variables.less";
+.input {
+  &__container {
+    width: 100%;
+    display: block;
+    border-bottom: solid 1px @gray-90;
+    padding-bottom: 4px;
+  }
+  &__label {
+    color: @gray-90;
+    font-size: 12px;
+    margin: 0;
+    padding-bottom: 8px;
+  }
+  &__field {
+    &--container {
+      width: 100%;
+    }
+    &--input {
+      width: 100%;
+      border: none;
+      padding: 0 32px 4px 0;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    &--figure {
+      height: 32px;
+      position: absolute;
+      right: 0;
+      top: -4px;
+      width: 32px;
+    }
+  }
+}

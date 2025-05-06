@@ -1,0 +1,44 @@
+@import "../../../../styles/abstracts/_variables.less";
+@import "../../../../styles/abstracts/_mixins.less";
+
+.auth {
+  min-height: 100vh;
+  display: flex;
+  &__aside {
+    background-color: @white;
+    flex-grow: 1;
+    min-width: 360px;
+  }
+  &__banner {
+    background-image: url("/assets/images/auth__banner--bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-grow: 1;
+    max-width: calc(100% - 530px);
+    &--figure {
+      margin: 64px auto 0;
+      width: 100%;
+      padding: 0 64px;
+    }
+    &--p {
+      color: @white;
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 0;
+      text-align: center;
+    }
+  }
+  .responsive(xl, {
+    &__banner{
+      &--figure{
+        padding: 0
+      }
+    }
+  });
+  .responsive(lg, {
+    &__banner{
+      display: none
+    }
+  });
+}

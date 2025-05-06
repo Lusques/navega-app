@@ -1,0 +1,15 @@
+<label class="input__container">
+  <p class="input__label">{{ label }}</p>
+  <span class="input__field--container p-input-icon-right">
+    <figure class="input__field--figure">
+      <img src="/assets/icons/check-circle.svg" alt="icone de checado" />
+    </figure>
+    <input
+      class="input__field--input"
+      type="text"
+      pInputText
+      [(ngModel)]="value"
+      (ngModelChange)="valueChanged.emit(value)"
+    />
+  </span>
+</label>
