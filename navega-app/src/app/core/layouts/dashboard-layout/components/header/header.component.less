@@ -76,7 +76,12 @@
   }
   .responsive(md, {
     &__top{
-      display: none;
+      overflow: hidden;
+      transition: 0.3s;
+      &.top__hidden{
+        height: 0;
+        padding: 0;
+      }
     }
   });
 }

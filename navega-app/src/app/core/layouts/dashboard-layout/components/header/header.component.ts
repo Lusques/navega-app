@@ -9,6 +9,7 @@ import { MonthlyContributionService } from 'src/app/core/services/dashboard/mont
 })
 export class HeaderComponent implements OnInit {
   @Output() headerClicked = new EventEmitter<void>();
+  hiddenTopHeader = false;
   constructor(
     private contributionService: MonthlyContributionService,
     private maskService: MaskService
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
 
   notifyClick() {
     this.headerClicked.emit();
+    this.toggleHiddenTopHeader();
   }
   clearData() {
     this.contributionService.deleteDataLS();
@@ -25,5 +27,8 @@ export class HeaderComponent implements OnInit {
   }
   toggleMask() {
     this.maskService.togleMask();
+  }
+  toggleHiddenTopHeader() {
+    this.hiddenTopHeader = !this.hiddenTopHeader;
   }
 }

@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="header__top">
+  <div class="header__top" [ngClass]="{ 'top__hidden': hiddenTopHeader }">
     <div class="header__container header__container--flex">
       <figure class="header__avatar--figure">
         <img src="/assets/images/avatar.png" alt="avatar do usuário" />
