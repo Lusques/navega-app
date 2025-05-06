@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MenuComponent } from '../../../../../shared/components/layout/menu/menu.component';
 import {
   Component,
@@ -6,6 +7,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { MaskService } from 'src/app/core/services/dashboard/mask.service';
 import { MonthlyContributionService } from 'src/app/core/services/dashboard/monthly-contribution.service';
 
@@ -16,20 +18,35 @@ import { MonthlyContributionService } from 'src/app/core/services/dashboard/mont
 })
 export class HeaderComponent implements OnInit {
   @Output() headerClicked = new EventEmitter<void>();
+  @Output() signOut = new EventEmitter<void>();
   @ViewChild('menu') menuCommponent!: MenuComponent;
 
   constructor(
     private contributionService: MonthlyContributionService,
-    private maskService: MaskService
+    private maskService: MaskService,
+    private authService: AuthService,
+    private router: Router
   ) {}
   hiddenTopHeader = false;
-  items = [{ label: 'Sair', icon: 'pi pi-sign-out', command: () => {} }];
+  items = [
+    {
+      label: 'Sair',
+      icon: 'pi pi-sign-out',
+      command: () => {
+        this.onSignOut();
+      },
+    },
+  ];
 
   ngOnInit(): void {}
 
   notifyClick() {
     this.headerClicked.emit();
     this.toggleHiddenTopHeader();
+  }
+  onSignOut() {
+    this.authService.logout();
+    this.router.navigate(['/auth']);
   }
   clearData() {
     this.contributionService.deleteDataLS();
