@@ -76,7 +76,8 @@ Tablets (768px+)
 Desktop (1024px+)
 
 ```
-OBS: Existe um mixin LESS responsável pelos breakpoints e os estilos no responsivo. Você pode encontrar ele no arquivo \_mixins.less
+OBS: Existe um mixin LESS responsável pelos breakpoints e os estilos no responsivo.
+Você pode encontrar ele no arquivo \_mixins.less
 ```
 
 ### 💡 Estrutura de pastas
@@ -87,9 +88,8 @@ src/
 │ ├── core/ # Guards, Layouts, Services
 │ ├── features/ # Auth, Dashboard
 │ ├── mocks/ # api mockada
-│ ├── shared/ # Components, Directives, Models, Pipes
-│ └── assets/ # Imagens, fontes
-├── assets/
+│ └── shared/ # Components, Directives, Models, Pipes
+├── assets/ # Imagens, Icons
 ├── styles/
 (...)
 ```
@@ -124,9 +124,11 @@ Modal para adicionar contribuições: Permite ao usuário adicionar contribuiç�
 
 Página de "Esqueci minha senha": Tela funcional adicionada ao fluxo de autenticação, com layout fiel ao estilo da aplicação.
 
-![modal](./public/forgot-password.png)
+![forgot-password](./public/forgot-password.png)
 
 Funcionalidades no Header:
+
+- Menu: ao clicar no avatar do usuário, abre um menu
 
 - Home: redireciona para a tela inicial do dashboard
 
