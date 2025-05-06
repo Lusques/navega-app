@@ -1,16 +1,25 @@
-import { TestBed } from '@angular/core/testing';
-
+import '@angular/compiler';
 import { AuthGuard } from './auth.guard';
+import { AuthService } from '../services/auth/auth.service';
 
 describe('AuthGuard', () => {
   let guard: AuthGuard;
+  let authServiceMock: { isAuthenticated: jest.Mock };
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    guard = TestBed.inject(AuthGuard);
+    authServiceMock = { isAuthenticated: jest.fn() };
+    const routerMock = { parseUrl: jest.fn((url) => url) };
+    guard = new AuthGuard(authServiceMock as any, routerMock as any);
   });
 
-  it('should be created', () => {
-    expect(guard).toBeTruthy();
+  it('deve permitir acesso se autenticado', () => {
+    authServiceMock.isAuthenticated.mockReturnValue(true);
+    expect(guard.canActivate({} as any, {} as any)).toBe(true);
+  });
+
+  it('deve redirecionar se não autenticado', () => {
+    authServiceMock.isAuthenticated.mockReturnValue(false);
+    const result = guard.canActivate({} as any, {} as any);
+    expect(result).toBe('/auth');
   });
 });
