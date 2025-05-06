@@ -1,7 +1,7 @@
 <header class="header">
-  <div class="header__top" [ngClass]="{ 'top__hidden': hiddenTopHeader }">
+  <div class="header__top" [ngClass]="{ top__hidden: hiddenTopHeader }">
     <div class="header__container header__container--flex">
-      <figure class="header__avatar--figure">
+      <figure class="header__avatar--figure" (click)="toggleMenu($event)">
         <img src="/assets/images/avatar.png" alt="avatar do usuário" />
       </figure>
       <div class="header__icons--container">
@@ -32,3 +32,4 @@
     </div>
   </div>
 </header>
+<app-menu #menu [items]="items"></app-menu>

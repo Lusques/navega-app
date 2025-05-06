@@ -5,10 +5,16 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 import { Router, RouterModule } from '@angular/router';
 import { HeaderComponent } from './layouts/dashboard-layout/components/header/header.component';
 import { NavigationComponent } from './layouts/dashboard-layout/components/navigation/navigation.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [LoginLayoutComponent, DashboardLayoutComponent, HeaderComponent, NavigationComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [RouterModule]
+  declarations: [
+    LoginLayoutComponent,
+    DashboardLayoutComponent,
+    HeaderComponent,
+    NavigationComponent,
+  ],
+  imports: [CommonModule, RouterModule, SharedModule],
+  exports: [RouterModule],
 })
 export class CoreModule {}

@@ -1,4 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MenuComponent } from '../../../../../shared/components/layout/menu/menu.component';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { MaskService } from 'src/app/core/services/dashboard/mask.service';
 import { MonthlyContributionService } from 'src/app/core/services/dashboard/monthly-contribution.service';
 
@@ -9,11 +16,14 @@ import { MonthlyContributionService } from 'src/app/core/services/dashboard/mont
 })
 export class HeaderComponent implements OnInit {
   @Output() headerClicked = new EventEmitter<void>();
-  hiddenTopHeader = false;
+  @ViewChild('menu') menuCommponent!: MenuComponent;
+
   constructor(
     private contributionService: MonthlyContributionService,
     private maskService: MaskService
   ) {}
+  hiddenTopHeader = false;
+  items = [{ label: 'Sair', icon: 'pi pi-sign-out', command: () => {} }];
 
   ngOnInit(): void {}
 
@@ -24,6 +34,9 @@ export class HeaderComponent implements OnInit {
   clearData() {
     this.contributionService.deleteDataLS();
     window.location.reload();
+  }
+  toggleMenu(event: Event) {
+    this.menuCommponent.toggleMenu(event);
   }
   toggleMask() {
     this.maskService.togleMask();
